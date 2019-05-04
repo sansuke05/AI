@@ -11,9 +11,9 @@ def and_gate(x1, x2):
 
 
 def and_with_b(x1, x2):
-    x = np.array([x1, x2])
-    w = np.array([0.5, 0.5])
-    b = -0.7
+    x = np.array([x1, x2])      # input vector
+    w = np.array([0.5, 0.5])    # weight vector
+    b = -0.7                    # bias(バイアス)
     f = np.sum(w*x) + b
     if f <= 0:
         return 0
@@ -23,8 +23,8 @@ def and_with_b(x1, x2):
 
 def nand(x1, x2):
     x = np.array([x1, x2])
-    w = np.array([-0.5, -0.5])
-    b = 0.7
+    w = np.array([-0.5, -0.5])  # nandなので逆数のweightにする
+    b = 0.7                     
     f = np.sum(w*x) + b
     if f <= 0:
         return 0
