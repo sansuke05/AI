@@ -58,3 +58,38 @@ Z1 = sigmoid_func(A1)
 print(Z1)
 
 #%%
+# ソフトマックス関数
+import numpy as np
+a = np.array([0.3, 2.9, 4.0])
+exp_a = np.exp(a)
+print(exp_a)
+sum_exp_a = np.sum(exp_a)
+print(sum_exp_a)
+y = exp_a / sum_exp_a
+print(y)
+#%%
+import numpy as np
+a = np.array([1010, 1000, 990])
+y = np.exp(a) / np.sum(np.exp(a))
+print(y)
+c = np.max(a)
+a = a - c
+print(a)
+y = np.exp(a) / np.sum(np.exp(a))
+print(y)
+#%%
+import numpy as np
+
+def softmax_func(a):
+    c = np.max(a)
+    exp_a = np.exp(a - c)
+    sum_exp_a = np.sum(exp_a)
+    y = exp_a / sum_exp_a
+    return y
+
+a = np.array([0.3, 2.9, 4.0])
+y = softmax_func(a)
+print(y)
+s = np.sum(y)
+print(s)
+#%%
